@@ -20,11 +20,11 @@ Elements needed on the page
 
 Determining where everything goes and what kind of boxes are needed.
 
-![Plan 1](tic-tac-toe/Images/plan1.PNG)
+![Plan 1](https://github.com/elywelly/tic-tac-toe/blob/main/Images/plan1.PNG)
 
 After writing up the HTML and CSS content, I found the info bar at the bottom to not be as visible when the user first views the page so I decided to switch it to the side.
 
-![Plan 2](tic-tac-toe/Images/plan2.PNG)
+![Plan 2](https://github.com/elywelly/tic-tac-toe/blob/main/Images/plan2.PNG)
 
 Other layout considerations after adding JS
 
@@ -55,4 +55,4 @@ Notes to depict indexes for Squares and Square
 
 -   to compare it to winning scenario index for position on squares
 
-![index reference](tic-tac-toe/Images/square-sqaures-index-ref.png)
+![index reference](https://github.com/elywelly/tic-tac-toe/blob/main/Images/square-sqaures-index-ref.png)
