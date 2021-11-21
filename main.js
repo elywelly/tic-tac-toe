@@ -30,6 +30,7 @@ window.addEventListener('load', function () {
                 // Add player image to index of each square
                 square[i] = currentPlayer;
                 console.log(square);
+                console.log(currentPlayer);
                 // Check the game - if all squares are filled
                 checkGame();
                 // Switch players with conditional - if apple then banana
@@ -68,6 +69,10 @@ window.addEventListener('load', function () {
         [2, 4, 6],
     ];
 
+    // Score
+    let appleScore = 0;
+    let bananaScore = 0;
+
     // check if all squares are filled, win or tie
     function checkGame() {
         // If all filled && matches by order
@@ -79,7 +84,6 @@ window.addEventListener('load', function () {
             let square2 = square[winScenarios[1]];
             // check each toWin's nested array and third number becomes third square position
             let square3 = square[winScenarios[2]];
-
             // Win scenario - if square inputs are all the same
             if (square1 === square2 && square2 === square3 && square1 != '') {
                 console.log(square1);
@@ -91,18 +95,27 @@ window.addEventListener('load', function () {
                     case apple:
                         result.classList.remove('hidden');
                         appleWin.classList.remove('hidden');
+                        bananaWin.classList.add('hidden');
+                        // add to apple score if win
+                        appleScore++;
+                        document.querySelector('#appleScore').innerHTML =
+                            appleScore;
                         break;
                     case banana:
                         result.classList.remove('hidden');
                         bananaWin.classList.remove('hidden');
+                        appleWin.classList.add('hidden');
+                        // add to banana score if win
+                        bananaScore++;
+                        document.querySelector('#bananaScore').innerHTML =
+                            bananaScore;
                         break;
                 }
-                // If all filled and no match toWin == result of draw
-            } else if (
-                !square.includes('') &&
-                square1 != square2 &&
-                square2 != square3
-            ) {
+                return;
+            }
+
+            // If all filled and no match toWin == result of draw
+            if (!square.includes('') && square1 != square2) {
                 // Get result
                 result.classList.remove('hidden');
                 draw.classList.remove('hidden');
@@ -114,5 +127,32 @@ window.addEventListener('load', function () {
         if (square.includes('')) {
             return;
         }
+    }
+
+    // Round number
+    let rounds = 1;
+
+    // Play again & reset button
+    const reset = document.querySelectorAll('.reset-button');
+    for (let i = 0; i < reset.length; i++) {
+        reset[i].addEventListener('click', function () {
+            // empty all squares
+            for (let j = 0; j < squares.length; j++) {
+                squares[j].innerHTML = null;
+            }
+            // empty array of each square
+            square = ['', '', '', '', '', '', '', '', ''];
+            // reset first player to apple
+            bananaWord.classList.add('hidden');
+            appleWord.classList.remove('hidden');
+            currentPlayer = apple;
+            if (reset[i].innerText == 'Play Again') {
+                // hide result
+                result.classList.add('hidden');
+                // add to round number
+                rounds++;
+                document.querySelector('#roundNum').innerHTML = rounds;
+            }
+        });
     }
 });

@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>TIC TAC TOE</title>
+        <title>FRUIT TAC TOE</title>
         <link rel="stylesheet" type="text/css" href="style.css" />
         <link
             href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
@@ -37,16 +37,19 @@
                         ><span id="bananaWord" class="hidden">Banana</span> 's
                         turn!
                     </p>
-                    <button class="refresh-button" onClick="window.location.href=window.location.href">Reset</button>
+                    <p>ROUND <span id="roundNum">1</span></p>
+                    <p class='icon'>&#127822 - <span id="appleScore">0</span></p></p>
+                    <p class='icon'>&#127820 - <span id="bananaScore">0</span></p></p>
+                    <button class="reset-button">Reset</button>
                 </section>
             </div>
             <div id="result" class="hidden">
                 <span id="appleWin" class="hidden">Apple Wins! &#127822<br />
-                    <button class="refresh-button" onClick="window.location.href=window.location.href">Replay</button></span
+                    <button class="reset-button">Play Again</button></span
                 ><span id="bananaWin" class="hidden">Banana Wins! &#127820<br />
-                    <button class="refresh-button" onClick="window.location.href=window.location.href">Replay</button></span>
+                    <button class="reset-button">Play Again</button></span>
                 <span id="tieWord" class="hidden">It's a tie!<br />
-                    <button class="refresh-button" onClick="window.location.href=window.location.href">Replay</button></span>
+                    <button class="reset-button">Play Again</button></span>
             </div>
         </main>
         <footer></footer>
