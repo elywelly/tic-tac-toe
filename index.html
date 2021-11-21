@@ -14,7 +14,7 @@
     <body>
         <header>
             <div class="bar">
-                <h1>Tic Tac Toe with Fruits</h1>
+                <h1>Fruit - Tac - Toe</h1>
             </div>
         </header>
         <main>
@@ -31,12 +31,22 @@
                     <div class="squares"></div>
                 </section>
                 <section id="info">
-                    <p>It's player <span class="player">X</span> 's turn!</p>
-                    <button id="reset-button">Reset</button>
+                    <p>
+                        It's
+                        <span id="appleWord" class="hidden">Apple</span
+                        ><span id="bananaWord" class="hidden">Banana</span> 's
+                        turn!
+                    </p>
+                    <button class="refresh-button" onClick="window.location.href=window.location.href">Reset</button>
                 </section>
             </div>
-            <div id="resultReset">
-                <div class="result"></div>
+            <div id="result" class="hidden">
+                <span id="appleWin" class="hidden">Apple Wins! &#127822<br />
+                    <button class="refresh-button" onClick="window.location.href=window.location.href">Replay</button></span
+                ><span id="bananaWin" class="hidden">Banana Wins! &#127820<br />
+                    <button class="refresh-button" onClick="window.location.href=window.location.href">Replay</button></span>
+                <span id="tieWord" class="hidden">It's a tie!<br />
+                    <button class="refresh-button" onClick="window.location.href=window.location.href">Replay</button></span>
             </div>
         </main>
         <footer></footer>
