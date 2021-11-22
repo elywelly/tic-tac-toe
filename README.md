@@ -49,7 +49,7 @@ When page loads, we start getting the variables
     -   Check each square's input with each index of winning scenarios
     -   Loop through array for each square and array for winning scenarios to match up if they are the same = win
 -   Draw scenario: Else if all squares are filled and not a win
--   Reset button function to empty all squares and inputs - through refresh
+-   Reset button function to empty all squares and inputs
 
 Notes to depict indexes for Squares and Square
 

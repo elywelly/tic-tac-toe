@@ -95,7 +95,6 @@ window.addEventListener('load', function () {
                     case apple:
                         result.classList.remove('hidden');
                         appleWin.classList.remove('hidden');
-                        bananaWin.classList.add('hidden');
                         // add to apple score if win
                         appleScore++;
                         document.querySelector('#appleScore').innerHTML =
@@ -104,7 +103,6 @@ window.addEventListener('load', function () {
                     case banana:
                         result.classList.remove('hidden');
                         bananaWin.classList.remove('hidden');
-                        appleWin.classList.add('hidden');
                         // add to banana score if win
                         bananaScore++;
                         document.querySelector('#bananaScore').innerHTML =
@@ -147,8 +145,10 @@ window.addEventListener('load', function () {
             appleWord.classList.remove('hidden');
             currentPlayer = apple;
             if (reset[i].innerText == 'Play Again') {
-                // hide result
+                // hide results
                 result.classList.add('hidden');
+                bananaWin.classList.add('hidden');
+                appleWin.classList.add('hidden');
                 // add to round number
                 rounds++;
                 document.querySelector('#roundNum').innerHTML = rounds;
