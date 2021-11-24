@@ -33,30 +33,42 @@
                 <section id="info">
                     <p>
                         It's
-                        <span id="playerTurn">Apple</span> 's
+                        <span id="appleWord" class="hidden">Apple</span
+                        ><span id="bananaWord" class="hidden">Banana</span>
+                        <span id="strawberryWord" class="hidden">Strawberry</span>
+                        <span id="watermelonWord" class="hidden">Watermelon</span> 's
                         turn!
                     </p>
                     <p>ROUND <span id="roundNum">1</span></p>
-                    <p><span id='icon1'>Player1</span> : <span id="player1Score">0</span></p>
-                    <p><span id='icon2'>Player2</span> : <span id="player2Score">0</span></p>
+                    <p class='icon'>&#127822 - <span id="appleScore">0</span></p>
+                    <p class='icon'>&#127820 - <span id="bananaScore">0</span></p>
                     <button class="reset-button">Reset</button>
                     <button class="reset-button">End Game</button>
                 </section>
             </div>
-            <div class="hidden result">
-                <span id="whoWon">Apple Wins!</span><br />
+            <div id="result" class="hidden">
+                <span id="appleWin" class="hidden">Apple Wins!<br />
                     <button class="reset-button">Play Again</button>
                     <button class="reset-button">End Game</button><br />
-                    <span id="iconWin"></span>
+                    <span class="iconWin">&#127822</span></span
+                ><span id="bananaWin" class="hidden">Banana Wins!<br />
+                    <button class="reset-button">Play Again</button>
+                    <button class="reset-button">End Game</button><br />
+                    <span class="iconWin">&#127820</span></span>
+                <span id="tieWord" class="hidden">It's a tie!<br />
+                    <button class="reset-button">Play Again</button>
+                    <button class="reset-button">End Game</button><br /></span>
             </div>
             <div id="endGame" class="hidden">
                 <p>Here is your final score after <span id="final-round">1 round</span> :</p>
-                <span id="finalWin">Apple Wins!</span>
-                    <p><span id="final1icon">&#127822</span> : <span id="one-end">0</span><br />
-                        <span id="final2icon">&#127820</span> : <span id="two-end">0</span><br />
+                <span id="appleWon" class="hidden">Apple Wins!</span>
+                <span id="bananaWon" class="hidden">Banana Wins!</span>
+                <span id="tieEnd" class="hidden">It's a tie!</span>
+                    <p>&#127822 : <span id="appleEnd">0</span><br />
+                    &#127820 : <span id="bananaEnd">0</span><br />
                     <button class="reset-button">Restart</button></p>
             </div>
         </main>
-        <script src="main.js"></script>
+        <script src="maincopy.js"></script>
     </body>
 </html>
