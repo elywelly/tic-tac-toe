@@ -38,21 +38,35 @@
                         turn!
                     </p>
                     <p>ROUND <span id="roundNum">1</span></p>
-                    <p class='icon'>&#127822 - <span id="appleScore">0</span></p></p>
-                    <p class='icon'>&#127820 - <span id="bananaScore">0</span></p></p>
+                    <p class='icon'>&#127822 - <span id="appleScore">0</span></p>
+                    <p class='icon'>&#127820 - <span id="bananaScore">0</span></p>
                     <button class="reset-button">Reset</button>
+                    <button class="reset-button">End Game</button>
                 </section>
             </div>
-            <div id="result" class=>
-                <span id="appleWin" class=>Apple Wins! &#127822<br />
-                    <button class="reset-button">Play Again</button></span
-                ><span id="bananaWin" class="hidden">Banana Wins! &#127820<br />
-                    <button class="reset-button">Play Again</button></span>
+            <div id="result" class="hidden">
+                <span id="appleWin" class="hidden">Apple Wins!<br />
+                    <button class="reset-button">Play Again</button>
+                    <button class="reset-button">End Game</button><br />
+                    <span class="iconWin">&#127822</span></span
+                ><span id="bananaWin" class="hidden">Banana Wins!<br />
+                    <button class="reset-button">Play Again</button>
+                    <button class="reset-button">End Game</button><br />
+                    <span class="iconWin">&#127820</span></span>
                 <span id="tieWord" class="hidden">It's a tie!<br />
-                    <button class="reset-button">Play Again</button></span>
+                    <button class="reset-button">Play Again</button>
+                    <button class="reset-button">End Game</button><br /></span>
+            </div>
+            <div id="endGame" class="hidden">
+                <p>Here is your final score after <span id="final-round">1 round</span> :</p>
+                <span id="appleWon" class="hidden">Apple Wins!</span>
+                <span id="bananaWon" class="hidden">Banana Wins!</span>
+                <span id="tieEnd" class="hidden">It's a tie!</span>
+                    <p>&#127822 : <span id="appleEnd">0</span><br />
+                    &#127820 : <span id="bananaEnd">0</span><br />
+                    <button class="reset-button">Restart</button></p>
             </div>
         </main>
-        <footer></footer>
         <script src="main.js"></script>
     </body>
 </html>

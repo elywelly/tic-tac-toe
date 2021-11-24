@@ -1,6 +1,25 @@
-// When page loads
+// players
+const player1;
+const player2;
+
+// When submit is hit
+document.querySelector('#play').addEventListener('click', function () {
+    // get player1 choice
+    player1 = document.querySelector(
+        'input[name="player1"]:checked'
+    ).value;
+    // get player2 choice
+    player2 = document.querySelector(
+        'input[name="player2"]:checked'
+    ).value;
+    // new page
+    location.href = 'index.html';
+});
+
 window.addEventListener('load', function () {
     // Players
+    console.log(player1);
+    console.log(player2);
     const apple = '&#127822';
     const banana = '&#127820';
     const appleWord = document.getElementById('appleWord');
@@ -194,3 +213,4 @@ window.addEventListener('load', function () {
         });
     }
 });
+

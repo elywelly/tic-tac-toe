@@ -1,4 +1,3 @@
-// When page loads
 window.addEventListener('load', function () {
     // Players
     const apple = '&#127822';

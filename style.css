@@ -18,7 +18,7 @@ h1 {
 
 .bar {
     background-color: rgb(41, 40, 40);
-    max-width: 600px;
+    min-width: 800px;
     min-height: 100px;
     margin: 0 auto;
     margin-bottom: 80px;
@@ -35,21 +35,6 @@ h1 {
     gap: 15px;
 }
 
-@media screen and (max-width: 10em) {
-    #container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        gap: 20px;
-        width: 100%;
-    }
-
-    #info {
-        width: 20em;
-        justify-self: center;
-        margin: 10px;
-    }
-}
-
 #game {
     display: grid;
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
@@ -58,6 +43,7 @@ h1 {
     justify-items: center;
     width: 500px;
     height: 500px;
+    cursor: grab;
 }
 
 .squares {
@@ -87,6 +73,12 @@ h1 {
     font-size: 1.2rem;
     height: 2rem;
     width: 6rem;
+    margin: 5px;
+}
+
+.reset-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 15px 20px rgba(21, 33, 28, 0.4);
 }
 
 .hidden {
@@ -98,7 +90,7 @@ h1 {
     font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
     font-size: 4em;
     border-radius: 25px;
-    /* background-color: rgb(250, 250, 250, 0.5); */
+    background-color: rgb(250, 250, 250, 0.6);
     top: 0;
     bottom: 0;
     left: 0;
@@ -106,20 +98,49 @@ h1 {
     position: fixed;
 }
 
-.apple-background {
-    background-image: url();
-}
-
 #appleWord,
-#appleWin {
+#appleWin,
+#appleWon {
     font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
     font-size: 1em;
     color: rgb(181, 30, 30);
+    animation: pulse 4s;
+    animation-iteration-count: infinite;
 }
 
 #bananaWord,
-#bananaWin {
+#bananaWin,
+#bananaWon {
     font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
     font-size: 1em;
     color: rgb(128, 124, 18);
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1.2);
+    }
+    25% {
+        transform: scale(1.5);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
+.iconWin {
+    font-size: 3em;
+}
+
+#endGame {
+    text-align: center;
+    font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
+    font-size: 4em;
+    border-radius: 25px;
+    background-color: rgb(250, 250, 250, 0.8);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
 }

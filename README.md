@@ -5,6 +5,8 @@
 -   HTML
 -   CSS
 -   JavaScript
+-   GitHub
+-   DOM
 
 ## Planning
 
@@ -31,7 +33,7 @@ Other layout considerations after adding JS
 -   Tie/Winning message
 -   User score/rounds (on the same info bar)
 
-### JavaScript
+### Functions
 
 When page loads, we start getting the variables
 
@@ -49,7 +51,15 @@ When page loads, we start getting the variables
     -   Check each square's input with each index of winning scenarios
     -   Loop through array for each square and array for winning scenarios to match up if they are the same = win
 -   Draw scenario: Else if all squares are filled and not a win
--   Reset button function to empty all squares and inputs
+-   Add game round and score (including display message of win)
+-   Reset button function to empty all squares and inputs (but not whole game)
+-   End game function for game to end and display final scores/winner + Restart (reload page to restart all fields)
+
+Further development
+
+-   A homepage for players to select their fruit character
+-   Get player selection and translate that to current game
+-   Allow players to return to homepage when they want to replay to switch characters
 
 Notes to depict indexes for Squares and Square
 
