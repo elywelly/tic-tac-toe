@@ -81,11 +81,7 @@ h1 {
     box-shadow: 0px 15px 20px rgba(21, 33, 28, 0.4);
 }
 
-.hidden {
-    display: none;
-}
-
-#result {
+.result {
     text-align: center;
     font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
     font-size: 4em;
@@ -96,24 +92,24 @@ h1 {
     left: 0;
     right: 0;
     position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-#appleWord,
-#appleWin,
-#appleWon {
+.hidden {
+    display: none;
+}
+
+#playerTurn,
+#whoWon,
+#finalWin {
     font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
     font-size: 1em;
     color: rgb(181, 30, 30);
     animation: pulse 4s;
     animation-iteration-count: infinite;
-}
-
-#bananaWord,
-#bananaWin,
-#bananaWon {
-    font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
-    font-size: 1em;
-    color: rgb(128, 124, 18);
 }
 
 @keyframes pulse {
@@ -128,7 +124,7 @@ h1 {
     }
 }
 
-.iconWin {
+#iconWin {
     font-size: 3em;
 }
 

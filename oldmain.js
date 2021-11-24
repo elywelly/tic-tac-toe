@@ -1,4 +1,8 @@
+// When page loads
 window.addEventListener('load', function () {
+    // get storage for players' choice
+    const player1 = localStorage.getItem('player1');
+    const player2 = localStorage.getItem('player2');
     // Players
     const apple = '&#127822';
     const banana = '&#127820';

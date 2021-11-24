@@ -1,14 +1,61 @@
 // When page loads
 window.addEventListener('load', function () {
-    // Players
-    const apple = '&#127822';
-    const banana = '&#127820';
-    const appleWord = document.getElementById('appleWord');
-    const bananaWord = document.getElementById('bananaWord');
+    // get storage for players' choice
+    let player1 = localStorage.getItem('player1');
+    let player2 = localStorage.getItem('player2');
 
-    // Whose turn is it? Display default start player's turn - apple
-    appleWord.classList.remove('hidden');
-    let currentPlayer = apple;
+    // to identify the player
+    let player1Fruit;
+    let player2Fruit;
+
+    switch (player1) {
+        case '🍎':
+            player1Fruit = 'Apple';
+            player1 = '&#127822';
+            break;
+        case '🍌':
+            player1Fruit = 'Banana';
+            player1 = '&#127820';
+            break;
+        case '🍓':
+            player1Fruit = 'Strawberry';
+            player1 = '&#127827';
+            break;
+        case '🍉':
+            player1Fruit = 'Watermelon';
+            player1 = '&#127817';
+            break;
+    }
+
+    switch (player2) {
+        case '🍎':
+            player2Fruit = 'Apple';
+            player2 = '&#127822';
+            break;
+        case '🍌':
+            player2Fruit = 'Banana';
+            player2 = '&#127820';
+            break;
+        case '🍓':
+            player2Fruit = 'Strawberry';
+            player2 = '&#127827';
+            break;
+        case '🍉':
+            player2Fruit = 'Watermelon';
+            player2 = '&#127817';
+            break;
+    }
+
+    // Whose turn is it? Display default start player's turn - player1
+    let currentPlayer = player1;
+
+    // player turn display
+    let playerTurn = document.querySelector('#playerTurn');
+    playerTurn.innerHTML = player1Fruit;
+
+    // Display player icons on scoreboard
+    document.querySelector('#icon1').innerHTML = player1;
+    document.querySelector('#icon2').innerHTML = player2;
 
     // Squares in an array - squares becomes an index
     const squares = Array.from(document.querySelectorAll('.squares'));
@@ -30,30 +77,29 @@ window.addEventListener('load', function () {
                 // Add player image to index of each square
                 square[i] = currentPlayer;
                 console.log(square);
-                console.log(currentPlayer);
                 // Check the game - if all squares are filled
                 checkGame();
-                // Switch players with conditional - if apple then banana
-                if (currentPlayer === apple) {
-                    currentPlayer = banana;
-                    // Change word to banana's turn
-                    appleWord.classList.add('hidden');
-                    bananaWord.classList.remove('hidden');
-                } else if (currentPlayer === banana) {
-                    currentPlayer = apple;
-                    // Change word to apple's turn
-                    bananaWord.classList.add('hidden');
-                    appleWord.classList.remove('hidden');
-                }
+                switchPlayers();
             }
         });
     }
 
-    // Win or Draw result message
-    const result = document.querySelector('#result');
-    const appleWin = document.querySelector('#appleWin');
-    const bananaWin = document.querySelector('#bananaWin');
-    const draw = document.querySelector('#tieWord');
+    //switch player function
+    function switchPlayers() {
+        // Switch players with conditional - if player1 then player2
+        if (currentPlayer == player1) {
+            currentPlayer = player2;
+            // change turn display
+            playerTurn.innerHTML = player2Fruit;
+        } else if (currentPlayer == player2) {
+            currentPlayer = player1;
+            // Change turn display
+            playerTurn.innerHTML = player1Fruit;
+        }
+    }
+
+    // Each round result display
+    const result = document.querySelector('.result');
 
     // Winnning scenarios of 3 in a row based on Squares array index - options in array
     const toWin = [
@@ -68,8 +114,8 @@ window.addEventListener('load', function () {
     ];
 
     // Score
-    let appleScore = 0;
-    let bananaScore = 0;
+    let player1Score = 0;
+    let player2Score = 0;
 
     // check if all squares are filled, win or tie
     function checkGame() {
@@ -78,6 +124,7 @@ window.addEventListener('load', function () {
             let winScenarios = toWin[i];
             // check each toWin's nested array and first number becomes first square position
             let square1 = square[winScenarios[0]];
+            console.log(square1);
             // check each toWin's nested array and second number becomes second square position
             let square2 = square[winScenarios[1]];
             // check each toWin's nested array and third number becomes third square position
@@ -85,22 +132,25 @@ window.addEventListener('load', function () {
             // Win scenario - if square inputs are all the same
             if (square1 === square2 && square2 === square3 && square1 != '') {
                 // Get result
+                result.classList.remove('hide');
                 switch (currentPlayer) {
-                    case apple:
-                        result.classList.remove('hidden');
-                        appleWin.classList.remove('hidden');
+                    case player1:
+                        document.querySelector('#whoWon').innerText =
+                            player1Fruit;
+                        document.querySelector('#iconWin').innerHTML = player1;
                         // add to apple score if win
-                        appleScore++;
-                        document.querySelector('#appleScore').innerHTML =
-                            appleScore;
+                        player1Score++;
+                        document.querySelector('#player1Score').innerHTML =
+                            player1Score;
                         break;
-                    case banana:
-                        result.classList.remove('hidden');
-                        bananaWin.classList.remove('hidden');
-                        // add to banana score if win
-                        bananaScore++;
-                        document.querySelector('#bananaScore').innerHTML =
-                            bananaScore;
+                    case player2:
+                        document.querySelector('#whoWon').innerText =
+                            player2Fruit;
+                        document.querySelector('#iconWin').innerHTML = player2;
+                        // add to apple score if win
+                        player2Score++;
+                        document.querySelector('#player2Score').innerHTML =
+                            player2Score;
                         break;
                 }
                 return;
@@ -111,7 +161,8 @@ window.addEventListener('load', function () {
         if (!square.includes('')) {
             // Get result
             result.classList.remove('hidden');
-            draw.classList.remove('hidden');
+            document.querySelector('#whoWon').innerHTML = "It's a tie";
+            document.querySelector('#iconWin').innerHTML = '';
             return;
         }
 
@@ -135,16 +186,11 @@ window.addEventListener('load', function () {
             // empty array of each square
             square = ['', '', '', '', '', '', '', '', ''];
             // reset first player to apple
-            bananaWord.classList.add('hidden');
-            appleWord.classList.remove('hidden');
-            currentPlayer = apple;
+            currentPlayer = player1;
             // To play again
             if (reset[i].innerText == 'Play Again') {
                 // hide results
                 result.classList.add('hidden');
-                bananaWin.classList.add('hidden');
-                appleWin.classList.add('hidden');
-                draw.classList.add('hidden');
                 // ensure end game is hidden if previously clicked
                 document.querySelector('#endGame').classList.add('hidden');
                 // add to round number
@@ -155,12 +201,9 @@ window.addEventListener('load', function () {
             if (reset[i].innerText == 'End Game') {
                 // hide results
                 result.classList.add('hidden');
-                bananaWin.classList.add('hidden');
-                appleWin.classList.add('hidden');
-                draw.classList.add('hidden');
                 // calculate apple & banana score
-                document.querySelector('#appleEnd').innerHTML = appleScore;
-                document.querySelector('#bananaEnd').innerHTML = bananaScore;
+                document.querySelector('#one-end').innerHTML = player1Score;
+                document.querySelector('#two-end').innerHTML = player2Score;
                 // based on number of rounds singular or plural
                 if (rounds > 1) {
                     document.querySelector('#final-round').innerHTML =
@@ -172,18 +215,21 @@ window.addEventListener('load', function () {
                 // display end game message
                 document.querySelector('#endGame').classList.remove('hidden');
                 // based on results
-                if (appleScore > bananaScore) {
-                    document
-                        .querySelector('#appleWon')
-                        .classList.remove('hidden');
-                } else if (appleScore === bananaScore) {
-                    document
-                        .querySelector('#tieEnd')
-                        .classList.remove('hidden');
+                if (player1Score > player2Score) {
+                    document.querySelector('#finalWin').innerHTML =
+                        player1Fruit;
+                    document.querySelector('#final1icon').innerHTML = player1;
+                    document.querySelector('#final2icon').innerHTML = player2;
+                } else if (player1Score === player2Score) {
+                    document.querySelector('#finalWin').innerHTML =
+                        "It's a tie";
+                    document.querySelector('#final1icon').innerHTML = player1;
+                    document.querySelector('#final2icon').innerHTML = player2;
                 } else {
-                    document
-                        .querySelector('#bananaWon')
-                        .classList.remove('hidden');
+                    document.querySelector('#finalWin').innerHTML =
+                        player2Fruit;
+                    document.querySelector('#final1icon').innerHTML = player1;
+                    document.querySelector('#final2icon').innerHTML = player2;
                 }
             }
 

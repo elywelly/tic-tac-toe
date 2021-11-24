@@ -55,10 +55,11 @@ When page loads, we start getting the variables
 -   Reset button function to empty all squares and inputs (but not whole game)
 -   End game function for game to end and display final scores/winner + Restart (reload page to restart all fields)
 
-Further development
+Further developments
 
 -   A homepage for players to select their fruit character
--   Get player selection and translate that to current game
+-   Get player selection and translate that to current game - local storage needed for player selection
+-   Ensure players are picking different fruits
 -   Allow players to return to homepage when they want to replay to switch characters
 
 Notes to depict indexes for Squares and Square
