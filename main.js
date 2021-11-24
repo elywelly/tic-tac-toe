@@ -160,7 +160,7 @@ window.addEventListener('load', function () {
         // If all filled and no match toWin == result of draw
         if (!square.includes('')) {
             // Get result
-            result.classList.remove('hidden');
+            result.style.display = 'flex';
             document.querySelector('#whoWon').innerHTML = "It's a tie";
             document.querySelector('#iconWin').innerHTML = '';
             return;
