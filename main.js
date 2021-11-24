@@ -132,11 +132,11 @@ window.addEventListener('load', function () {
             // Win scenario - if square inputs are all the same
             if (square1 === square2 && square2 === square3 && square1 != '') {
                 // Get result
-                result.classList.remove('hide');
+                result.style.display = 'flex';
                 switch (currentPlayer) {
                     case player1:
                         document.querySelector('#whoWon').innerText =
-                            player1Fruit;
+                            player1Fruit + ' Wins';
                         document.querySelector('#iconWin').innerHTML = player1;
                         // add to apple score if win
                         player1Score++;
@@ -145,7 +145,7 @@ window.addEventListener('load', function () {
                         break;
                     case player2:
                         document.querySelector('#whoWon').innerText =
-                            player2Fruit;
+                            player2Fruit + ' Wins';
                         document.querySelector('#iconWin').innerHTML = player2;
                         // add to apple score if win
                         player2Score++;
@@ -190,7 +190,7 @@ window.addEventListener('load', function () {
             // To play again
             if (reset[i].innerText == 'Play Again') {
                 // hide results
-                result.classList.add('hidden');
+                result.style.display = 'none';
                 // ensure end game is hidden if previously clicked
                 document.querySelector('#endGame').classList.add('hidden');
                 // add to round number
@@ -200,7 +200,7 @@ window.addEventListener('load', function () {
             // To end game
             if (reset[i].innerText == 'End Game') {
                 // hide results
-                result.classList.add('hidden');
+                result.style.display = 'none';
                 // calculate apple & banana score
                 document.querySelector('#one-end').innerHTML = player1Score;
                 document.querySelector('#two-end').innerHTML = player2Score;
@@ -217,7 +217,7 @@ window.addEventListener('load', function () {
                 // based on results
                 if (player1Score > player2Score) {
                     document.querySelector('#finalWin').innerHTML =
-                        player1Fruit;
+                        player1Fruit + ' Wins';
                     document.querySelector('#final1icon').innerHTML = player1;
                     document.querySelector('#final2icon').innerHTML = player2;
                 } else if (player1Score === player2Score) {
@@ -227,7 +227,7 @@ window.addEventListener('load', function () {
                     document.querySelector('#final2icon').innerHTML = player2;
                 } else {
                     document.querySelector('#finalWin').innerHTML =
-                        player2Fruit;
+                        player2Fruit + ' Wins';
                     document.querySelector('#final1icon').innerHTML = player1;
                     document.querySelector('#final2icon').innerHTML = player2;
                 }
