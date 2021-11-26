@@ -254,6 +254,11 @@ window.addEventListener('load', function () {
                         "It's a tie";
                     document.querySelector('#final1icon').innerHTML = player1;
                     document.querySelector('#final2icon').innerHTML = player2;
+                    // Sound for tie
+                    const audioFinalTie = new Audio(
+                        'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/finaltie.wav?raw=true'
+                    );
+                    audioWinner.play();
                 } else {
                     document.querySelector('#finalWin').innerHTML =
                         player2Fruit + ' Wins';

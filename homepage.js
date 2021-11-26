@@ -1,10 +1,5 @@
 // When submit is hit
 document.querySelector('#play').addEventListener('click', function () {
-    // game sound
-    const audioWinner = new Audio(
-        'https://drive.google.com/file/d/1rEdwppl4oyRIjXpYIsMfpUHOqQVXlAW1/view?usp=sharing'
-    );
-    audioWinner.play();
     // get player1 choice
     const player1 = document.querySelector(
         'input[name="player1"]:checked'
