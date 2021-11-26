@@ -1,5 +1,17 @@
 # tic-tac-toe
 
+## Snapshot
+
+To enter the game: [Click here](https://elywelly.github.io/tic-tac-toe/homepage)
+
+#### Homepage
+
+![Homepage](https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/plan1.PNG?raw=true)
+
+#### Game Page
+
+![Game Page](https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/plan1.PNG?raw=true)
+
 ## Tech Used
 
 -   HTML
@@ -59,11 +71,12 @@ When page loads, we start getting the variables
 
 Initial idea (in [old-code file](https://github.com/elywelly/tic-tac-toe/tree/main/old-code)) had a default selection of player characters (apple & banana). To allow for user selection from a variety of characters, the code would need to be modified to be more dynamic.
 
--   A homepage for players to select their fruit character - ensure users do not select the same character
+-   Adding in a homepage for players to select their fruit character - ensure users do not select the same character
 -   Get player selection and translate that to current game - local storage needed for player selection
 -   Ensure players are picking different fruits
--   Allow players to select a new character when the game has ended
+-   Allow players to select a new character after the game has ended
 -   Ensure players already picked a character if they navigated to game page first - redirect to homepage for character pick
+-   Add sound effects to some user clicks and page changes (win/tie)
 
 Notes to depict indexes for Squares and Square
 
