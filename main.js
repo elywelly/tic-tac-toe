@@ -1,8 +1,12 @@
 // When page loads
 window.addEventListener('load', function () {
     // get storage for players' choice
-    let player1 = localStorage.getItem('player1');
-    let player2 = localStorage.getItem('player2');
+    let player1 = sessionStorage.getItem('player1');
+    let player2 = sessionStorage.getItem('player2');
+
+    if (player1 == '' || player2 == '') {
+        location.href = 'homepage.html';
+    }
 
     // to identify the player
     let player1Fruit;

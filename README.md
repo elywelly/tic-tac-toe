@@ -60,7 +60,8 @@ Further developments
 -   A homepage for players to select their fruit character
 -   Get player selection and translate that to current game - local storage needed for player selection
 -   Ensure players are picking different fruits
--   Allow players to return to homepage when they want to replay to switch characters
+-   Allow players to return to homepage when they want to replay and switch characters
+-   Ensure players picked character if they navigated to game page first - redirect to homepage for character pick
 
 Notes to depict indexes for Squares and Square
 

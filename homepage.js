@@ -11,9 +11,9 @@ document.querySelector('#play').addEventListener('click', function () {
     if (player1 == player2) {
         alert('Please pick different fruits');
     } else {
-        // local storage
-        localStorage.setItem('player1', player1);
-        localStorage.setItem('player2', player2);
+        // session storage
+        sessionStorage.setItem('player1', player1);
+        sessionStorage.setItem('player2', player2);
         // new page
         location.href = 'index.html';
     }
