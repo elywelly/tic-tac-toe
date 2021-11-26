@@ -76,6 +76,11 @@ window.addEventListener('load', function () {
             if (squares[i].innerHTML !== '') {
                 alert('Please select another square!');
                 currentPlayer = currentPlayer;
+                // Sound for alert
+                const audioAlert = new Audio(
+                    'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/wrongans.wav?raw=true'
+                );
+                audioAlert.play();
             } else {
                 // Add player image to index of each square
                 squares[i].innerHTML = currentPlayer;
@@ -177,6 +182,11 @@ window.addEventListener('load', function () {
             result.style.display = 'flex';
             document.querySelector('#whoWon').innerHTML = "It's a tie";
             document.querySelector('#iconWin').innerHTML = '';
+            // Sound for tie
+            const audioTie = new Audio(
+                'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/softtie.wav?raw=true'
+            );
+            audioTie.play();
             return;
         }
 
@@ -258,7 +268,7 @@ window.addEventListener('load', function () {
             }
 
             // to pick new fruits + Restart
-            if (reset[i].innerText === 'Pick New Fruits') {
+            if (reset[i].innerText === 'Pick New Fruit') {
                 // reload page to reset everything
                 localStorage.clear();
                 location.href = 'homepage.html';
