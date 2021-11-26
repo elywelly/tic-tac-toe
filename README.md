@@ -1,4 +1,6 @@
-# tic-tac-toe
+# Fruit-tac-toe
+
+Tic tac toe but fruitier.
 
 ## Snapshot
 
@@ -28,7 +30,11 @@ Elements needed on the page
 -   Tic tac toe template with squares
 -   Whose turn is it info
 -   Who won message
--   Reset after someone wins OR no more blank squares
+-   Reset option to clear squares
+-   Restart option to end game and start over
+-   Character - fruits
+
+**Initial idea was to utilise images of fruits, but emojis were more efficient as the HTML code can easily be used with DOM manipulation.**
 
 ### Layout plan
 
