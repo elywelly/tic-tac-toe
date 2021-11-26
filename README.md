@@ -53,7 +53,7 @@ Other layout considerations after adding JS
 
 ### Functions
 
-When page loads, we start getting the variables
+When page loads, so do the variables
 
 -   Player 1 and Player 2 characters
 -   Character word display of whose turn is it
@@ -78,14 +78,19 @@ When page loads, we start getting the variables
 Initial idea (in [old-code file](https://github.com/elywelly/tic-tac-toe/tree/main/old-code)) had a default selection of player characters (apple & banana). To allow for user selection from a variety of characters, the code would need to be modified to be more dynamic.
 
 -   Adding in a homepage for players to select their fruit character - ensure users do not select the same character
--   Get player selection and translate that to current game - local storage needed for player selection
+-   Get player selection and translate that to current game - session storage needed for player selection
 -   Ensure players are picking different fruits
 -   Allow players to select a new character after the game has ended
 -   Ensure players already picked a character if they navigated to game page first - redirect to homepage for character pick
--   Add sound effects to some user clicks and page changes (win/tie)
+-   Add sound effects to some user clicks and page changes (win/tie) - preload sound
 
 Notes to depict indexes for Squares and Square
 
 -   to compare it to winning scenario index for position on squares
 
 ![index reference](https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/square-sqaures-index-ref.png?raw=true)
+
+## Credits
+
+Background image [here](https://www.freejpg.com.ar/imagenes/premium/1182084383/vector-sin-costuras-patron-con-frutas-contorno-iconos-pina-manzana-platanos-naranja-ciruela-sandia-uvas-para-el-patron-en-el-embalaje-envoltorio-caja-ropa)
+Sound from [mixkit](https://mixkit.co/)

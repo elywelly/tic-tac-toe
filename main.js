@@ -1,8 +1,8 @@
 // When page loads
 window.addEventListener('load', function () {
     // get storage for players' choice
-    let player1 = localStorage.getItem('player1');
-    let player2 = localStorage.getItem('player2');
+    let player1 = sessionStorage.getItem('player1');
+    let player2 = sessionStorage.getItem('player2');
 
     // if no fruits were selected
     if (player1 == null || player2 == null) {
@@ -62,6 +62,38 @@ window.addEventListener('load', function () {
     document.querySelector('#icon1').innerHTML = player1;
     document.querySelector('#icon2').innerHTML = player2;
 
+    // Load all sound
+    // Alert
+    const audioAlert = new Audio(
+        'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/wrongans.wav?raw=true'
+    );
+    audioAlert.preload = 'auto';
+    // Sound for when player clicks
+    const audioClick = new Audio(
+        'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/playerclick.wav?raw=true'
+    );
+    audioClick.preload = 'auto';
+    // Sound for when player wins
+    const audioWin = new Audio(
+        'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/softwin.wav?raw=true'
+    );
+    audioWin.preload = 'auto';
+    // Sound for tie
+    const audioTie = new Audio(
+        'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/softtie.wav?raw=true'
+    );
+    audioTie.preload = 'auto';
+    // Sound for final winner
+    const audioWinner = new Audio(
+        'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/finalwin.wav?raw=true'
+    );
+    audioWinner.preload = 'auto';
+    // Sound for tie
+    const audioFinalTie = new Audio(
+        'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/finaltie.wav?raw=true'
+    );
+    audioFinalTie.preload = 'auto';
+
     // Squares in an array - squares becomes an index
     const squares = Array.from(document.querySelectorAll('.squares'));
 
@@ -74,20 +106,16 @@ window.addEventListener('load', function () {
         squares[i].addEventListener('click', function (event) {
             // Check if the square is already selected
             if (squares[i].innerHTML !== '') {
-                alert('Please select another square!');
+                audioAlert.play();
                 currentPlayer = currentPlayer;
                 // Sound for alert
-                const audioAlert = new Audio(
-                    'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/wrongans.wav?raw=true'
-                );
-                audioAlert.play();
+                setTimeout(function () {
+                    alert('Please select another square!');
+                }, 0);
             } else {
                 // Add player image to index of each square
                 squares[i].innerHTML = currentPlayer;
                 // Sound for when player clicks
-                const audioClick = new Audio(
-                    'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/playerclick.wav?raw=true'
-                );
                 audioClick.play();
                 // Add player image to square position in array
                 square[i] = currentPlayer;
@@ -148,9 +176,6 @@ window.addEventListener('load', function () {
                 // Get result
                 result.style.display = 'flex';
                 // Sound for when player wins
-                const audioWin = new Audio(
-                    'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/softwin.wav?raw=true'
-                );
                 audioWin.play();
                 switch (currentPlayer) {
                     case player1:
@@ -183,9 +208,6 @@ window.addEventListener('load', function () {
             document.querySelector('#whoWon').innerHTML = "It's a tie";
             document.querySelector('#iconWin').innerHTML = '';
             // Sound for tie
-            const audioTie = new Audio(
-                'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/softtie.wav?raw=true'
-            );
             audioTie.play();
             return;
         }
@@ -245,9 +267,6 @@ window.addEventListener('load', function () {
                     document.querySelector('#final1icon').innerHTML = player1;
                     document.querySelector('#final2icon').innerHTML = player2;
                     // Sound for when final winner
-                    const audioWinner = new Audio(
-                        'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/finalwin.wav?raw=true'
-                    );
                     audioWinner.play();
                 } else if (player1Score === player2Score) {
                     document.querySelector('#finalWin').innerHTML =
@@ -255,9 +274,6 @@ window.addEventListener('load', function () {
                     document.querySelector('#final1icon').innerHTML = player1;
                     document.querySelector('#final2icon').innerHTML = player2;
                     // Sound for tie
-                    const audioFinalTie = new Audio(
-                        'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/finaltie.wav?raw=true'
-                    );
                     audioFinalTie.play();
                 } else {
                     document.querySelector('#finalWin').innerHTML =
@@ -265,9 +281,6 @@ window.addEventListener('load', function () {
                     document.querySelector('#final1icon').innerHTML = player1;
                     document.querySelector('#final2icon').innerHTML = player2;
                     // Sound for when final winner
-                    const audioWinner = new Audio(
-                        'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/finalwin.wav?raw=true'
-                    );
                     audioWinner.play();
                 }
             }
@@ -280,7 +293,7 @@ window.addEventListener('load', function () {
             // to pick new fruits + Restart
             if (reset[i].innerText === 'Pick New Fruit') {
                 // reload page to reset everything
-                localStorage.clear();
+                sessionStorage.clear();
                 location.href = 'homepage.html';
             }
         });
