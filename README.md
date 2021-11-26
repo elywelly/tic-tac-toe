@@ -6,11 +6,11 @@ To enter the game: [Click here](https://elywelly.github.io/tic-tac-toe/homepage)
 
 #### Homepage
 
-![Homepage](https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/plan1.PNG?raw=true)
+![Homepage](https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/finalgamehomepage.png?raw=true)
 
 #### Game Page
 
-![Game Page](https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/plan1.PNG?raw=true)
+![Game Page](https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/finalgamepage.png?raw=true)
 
 ## Tech Used
 
