@@ -71,7 +71,7 @@ window.addEventListener('load', function () {
     // Listen to each square for user click
     for (let i = 0; i < squares.length; i++) {
         // When player clicks the square, they are current player
-        squares[i].addEventListener('click', function () {
+        squares[i].addEventListener('click', function (event) {
             // Check if the square is already selected
             if (squares[i].innerHTML !== '') {
                 alert('Please select another square!');
@@ -79,6 +79,10 @@ window.addEventListener('load', function () {
             } else {
                 // Add player image to index of each square
                 squares[i].innerHTML = currentPlayer;
+                const audioOne = new Audio(
+                    'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/SPRTField_Balloon%20against%20wall%202%20(ID%201826)_BSB.mp3?raw=true'
+                );
+                audioOne.play();
 
                 // Add player image to square position in array
                 square[i] = currentPlayer;
