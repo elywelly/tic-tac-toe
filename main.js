@@ -79,11 +79,11 @@ window.addEventListener('load', function () {
             } else {
                 // Add player image to index of each square
                 squares[i].innerHTML = currentPlayer;
-                const audioOne = new Audio(
-                    'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/SPRTField_Balloon%20against%20wall%202%20(ID%201826)_BSB.mp3?raw=true'
+                // Sound for when player clicks
+                const audioClick = new Audio(
+                    'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/playerclick.wav?raw=true'
                 );
-                audioOne.play();
-
+                audioClick.play();
                 // Add player image to square position in array
                 square[i] = currentPlayer;
                 // Check the game - if all squares are filled
@@ -142,6 +142,11 @@ window.addEventListener('load', function () {
             if (square1 === square2 && square2 === square3 && square1 != '') {
                 // Get result
                 result.style.display = 'flex';
+                // Sound for when player wins
+                const audioWin = new Audio(
+                    'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/softwin.wav?raw=true'
+                );
+                audioWin.play();
                 switch (currentPlayer) {
                     case player1:
                         document.querySelector('#whoWon').innerText =
@@ -223,6 +228,11 @@ window.addEventListener('load', function () {
                 }
                 // display end game message
                 document.querySelector('#endGame').classList.remove('hidden');
+                // Sound for when final winner
+                const audioWinner = new Audio(
+                    'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/WinnerFinal.wav?raw=true'
+                );
+                audioWinner.play();
                 // based on results
                 if (player1Score > player2Score) {
                     document.querySelector('#finalWin').innerHTML =
