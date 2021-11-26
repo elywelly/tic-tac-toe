@@ -238,17 +238,17 @@ window.addEventListener('load', function () {
                 }
                 // display end game message
                 document.querySelector('#endGame').classList.remove('hidden');
-                // Sound for when final winner
-                const audioWinner = new Audio(
-                    'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/WinnerFinal.wav?raw=true'
-                );
-                audioWinner.play();
                 // based on results
                 if (player1Score > player2Score) {
                     document.querySelector('#finalWin').innerHTML =
                         player1Fruit + ' Wins';
                     document.querySelector('#final1icon').innerHTML = player1;
                     document.querySelector('#final2icon').innerHTML = player2;
+                    // Sound for when final winner
+                    const audioWinner = new Audio(
+                        'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/finalwin.wav?raw=true'
+                    );
+                    audioWinner.play();
                 } else if (player1Score === player2Score) {
                     document.querySelector('#finalWin').innerHTML =
                         "It's a tie";
@@ -258,12 +258,17 @@ window.addEventListener('load', function () {
                     const audioFinalTie = new Audio(
                         'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/finaltie.wav?raw=true'
                     );
-                    audioWinner.play();
+                    audioFinalTie.play();
                 } else {
                     document.querySelector('#finalWin').innerHTML =
                         player2Fruit + ' Wins';
                     document.querySelector('#final1icon').innerHTML = player1;
                     document.querySelector('#final2icon').innerHTML = player2;
+                    // Sound for when final winner
+                    const audioWinner = new Audio(
+                        'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/finalwin.wav?raw=true'
+                    );
+                    audioWinner.play();
                 }
             }
 
