@@ -1,10 +1,11 @@
 // When page loads
 window.addEventListener('load', function () {
     // get storage for players' choice
-    let player1 = sessionStorage.getItem('player1');
-    let player2 = sessionStorage.getItem('player2');
+    let player1 = localStorage.getItem('player1');
+    let player2 = localStorage.getItem('player2');
 
-    if (player1 == '' || player2 == '') {
+    // if no fruits were selected
+    if (player1 == null || player2 == null) {
         location.href = 'homepage.html';
     }
 
@@ -76,13 +77,14 @@ window.addEventListener('load', function () {
                 alert('Please select another square!');
                 currentPlayer = currentPlayer;
             } else {
-                // Add player image to square position in array - innerHTML
-                squares[i].innerHTML = currentPlayer;
                 // Add player image to index of each square
+                squares[i].innerHTML = currentPlayer;
+
+                // Add player image to square position in array
                 square[i] = currentPlayer;
-                console.log(square);
                 // Check the game - if all squares are filled
                 checkGame();
+                // Switch players
                 switchPlayers();
             }
         });
@@ -128,7 +130,6 @@ window.addEventListener('load', function () {
             let winScenarios = toWin[i];
             // check each toWin's nested array and first number becomes first square position
             let square1 = square[winScenarios[0]];
-            console.log(square1);
             // check each toWin's nested array and second number becomes second square position
             let square2 = square[winScenarios[1]];
             // check each toWin's nested array and third number becomes third square position
@@ -142,7 +143,7 @@ window.addEventListener('load', function () {
                         document.querySelector('#whoWon').innerText =
                             player1Fruit + ' Wins';
                         document.querySelector('#iconWin').innerHTML = player1;
-                        // add to apple score if win
+                        // add to PLAYER1 score if win
                         player1Score++;
                         document.querySelector('#player1Score').innerHTML =
                             player1Score;
@@ -151,7 +152,7 @@ window.addEventListener('load', function () {
                         document.querySelector('#whoWon').innerText =
                             player2Fruit + ' Wins';
                         document.querySelector('#iconWin').innerHTML = player2;
-                        // add to apple score if win
+                        // add to PLAYER2 score if win
                         player2Score++;
                         document.querySelector('#player2Score').innerHTML =
                             player2Score;
@@ -240,6 +241,13 @@ window.addEventListener('load', function () {
             if (reset[i].innerText === 'Restart') {
                 // reload page to reset everything
                 window.location.href = window.location.href;
+            }
+
+            // to pick new fruits + Restart
+            if (reset[i].innerText === 'Pick New Fruits') {
+                // reload page to reset everything
+                localStorage.clear();
+                location.href = 'homepage.html';
             }
         });
     }

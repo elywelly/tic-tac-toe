@@ -55,13 +55,15 @@ When page loads, we start getting the variables
 -   Reset button function to empty all squares and inputs (but not whole game)
 -   End game function for game to end and display final scores/winner + Restart (reload page to restart all fields)
 
-Further developments
+## Further developments
 
--   A homepage for players to select their fruit character
+Initial idea (in [old-code file](https://github.com/elywelly/tic-tac-toe/tree/main/old-code)) had a default selection of player characters (apple & banana). To allow for user selection from a variety of characters, the code would need to be modified to be more dynamic.
+
+-   A homepage for players to select their fruit character - ensure users do not select the same character
 -   Get player selection and translate that to current game - local storage needed for player selection
 -   Ensure players are picking different fruits
--   Allow players to return to homepage when they want to replay and switch characters
--   Ensure players picked character if they navigated to game page first - redirect to homepage for character pick
+-   Allow players to select a new character when the game has ended
+-   Ensure players already picked a character if they navigated to game page first - redirect to homepage for character pick
 
 Notes to depict indexes for Squares and Square
 
