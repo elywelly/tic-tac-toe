@@ -8,7 +8,7 @@ To enter the game: [Click here](https://elywelly.github.io/tic-tac-toe/homepage)
 
 #### Homepage
 
-![Homepage](https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/finalgamehomepage.png?raw=true)
+![Homepage](https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/finalhomepage.png?raw=true)
 
 #### Game Page
 
