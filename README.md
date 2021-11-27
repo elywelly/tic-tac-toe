@@ -34,7 +34,7 @@ Elements needed on the page
 -   Restart option to end game and start over
 -   Character - fruits
 
-**Initial idea was to utilise images of fruits, but emojis were more efficient as the HTML code can easily be used with DOM manipulation.**
+**Initial idea was to utilise images of fruits, but emojis were more efficient as the HTML code can easily be used with JS.**
 
 ### Layout plan
 
