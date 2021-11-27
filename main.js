@@ -93,6 +93,38 @@ window.addEventListener('load', function () {
         'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/finaltie.wav?raw=true'
     );
     audioFinalTie.preload = 'auto';
+    // Sound for reset button
+    const audioReset = new Audio(
+        'https://github.com/elywelly/tic-tac-toe/blob/main/Images-Audio/reset.wav?raw=true'
+    );
+    audioReset.preload = 'auto';
+
+    //
+
+    // Option to turn off sound
+    const allAudio = [
+        audioAlert,
+        audioClick,
+        audioWin,
+        audioTie,
+        audioWinner,
+        audioFinalTie,
+        audioReset,
+    ];
+
+    const audioToggle = document.querySelector('.setAudio');
+
+    audioToggle.addEventListener('click', function () {
+        for (let i = 0; i < allAudio.length; i++) {
+            if (allAudio[i].muted) {
+                allAudio[i].muted = false;
+                audioToggle.innerText = 'Sound Off';
+            } else {
+                allAudio[i].muted = true;
+                audioToggle.innerText = 'Sound On';
+            }
+        }
+    });
 
     // Squares in an array - squares becomes an index
     const squares = Array.from(document.querySelectorAll('.squares'));
@@ -233,6 +265,10 @@ window.addEventListener('load', function () {
             square = ['', '', '', '', '', '', '', '', ''];
             // reset first player to apple
             currentPlayer = player1;
+            // button sound only for reset board
+            if (reset[i].innerText == 'Reset') {
+                audioReset.play();
+            }
             // To play again
             if (reset[i].innerText == 'Play Again') {
                 // hide results

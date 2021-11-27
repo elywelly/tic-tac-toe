@@ -83,8 +83,9 @@ Initial idea (in [old-code file](https://github.com/elywelly/tic-tac-toe/tree/ma
 -   Allow players to select a new character after the game has ended
 -   Ensure players already picked a character if they navigated to game page first - redirect to homepage for character pick
 -   Add sound effects to some user clicks and page changes (win/tie) - preload sound
+-   Add option for user to turn sound off/on
 
-Notes to depict indexes for Squares and Square
+#### Notes to depict indexes for Squares and Square
 
 -   to compare it to winning scenario index for position on squares
 
@@ -92,5 +93,4 @@ Notes to depict indexes for Squares and Square
 
 ## Credits
 
-Background image [here](https://www.freejpg.com.ar/imagenes/premium/1182084383/vector-sin-costuras-patron-con-frutas-contorno-iconos-pina-manzana-platanos-naranja-ciruela-sandia-uvas-para-el-patron-en-el-embalaje-envoltorio-caja-ropa)
-Sound from [mixkit](https://mixkit.co/)
+Background image [here](https://www.freejpg.com.ar/imagenes/premium/1182084383/vector-sin-costuras-patron-con-frutas-contorno-iconos-pina-manzana-platanos-naranja-ciruela-sandia-uvas-para-el-patron-en-el-embalaje-envoltorio-caja-ropa) | Sound from [mixkit](https://mixkit.co/)
