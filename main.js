@@ -99,8 +99,6 @@ window.addEventListener('load', function () {
     );
     audioReset.preload = 'auto';
 
-    //
-
     // Option to turn off sound
     const allAudio = [
         audioAlert,
