@@ -113,13 +113,12 @@ window.addEventListener('load', function () {
     const audioToggle = document.querySelector('.setAudio');
 
     audioToggle.addEventListener('click', function () {
+        audioToggle.innerText = 'Sound On';
         for (let i = 0; i < allAudio.length; i++) {
             if (allAudio[i].muted) {
                 allAudio[i].muted = false;
-                audioToggle.innerText = 'Sound Off';
             } else {
                 allAudio[i].muted = true;
-                audioToggle.innerText = 'Sound On';
             }
         }
     });
@@ -137,7 +136,6 @@ window.addEventListener('load', function () {
             // Check if the square is already selected
             if (squares[i].innerHTML !== '') {
                 audioAlert.play();
-                currentPlayer = currentPlayer;
                 // Sound for alert
                 setTimeout(function () {
                     alert('Please select another square!');
