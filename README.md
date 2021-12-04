@@ -93,4 +93,4 @@ Initial idea (in [old-code file](https://github.com/elywelly/tic-tac-toe/tree/ma
 
 ## Credits
 
-Background image [here](https://www.freejpg.com.ar/imagenes/premium/1182084383/vector-sin-costuras-patron-con-frutas-contorno-iconos-pina-manzana-platanos-naranja-ciruela-sandia-uvas-para-el-patron-en-el-embalaje-envoltorio-caja-ropa) | Sound from [mixkit](https://mixkit.co/)
+Background image from Pixabay | Sound from [mixkit](https://mixkit.co/)
